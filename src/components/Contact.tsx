@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Github, MessageCircle, CheckCircle2 } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  MessageCircle,
+  CheckCircle2,
+} from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
 
 export default function Contact() {
@@ -17,14 +25,28 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "hirwachristian@gmail.com", href: "mailto:hirwachristian@gmail.com" },
-    { icon: Phone, label: "Phone", value: "+250 7XX XXX XXX", href: "tel:+250700000000" },
+    {
+      icon: Mail,
+      label: "Email",
+      value: "hirwachristian@gmail.com",
+      href: "mailto:hirwachristian@gmail.com",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+250 794627455",
+      href: "tel:+250794627455",
+    },
     { icon: MapPin, label: "Location", value: "Kigali, Rwanda", href: null },
   ];
 
   const socials = [
     { icon: Github, label: "GitHub", href: "https://github.com/chrishirwa123" },
-    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/250700000000" },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      href: "https://wa.me/250794627455",
+    },
   ];
 
   return (
@@ -32,7 +54,10 @@ export default function Contact() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-violet-600/5 blur-[120px]" />
 
       <div className="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
-        <div ref={ref} className={`text-center mb-16 ${visible ? "reveal visible" : "reveal"}`}>
+        <div
+          ref={ref}
+          className={`text-center mb-16 ${visible ? "reveal visible" : "reveal"}`}
+        >
           <span className="text-xs font-bold text-violet-400 uppercase tracking-[0.2em] mb-3 block">
             Get in Touch
           </span>
@@ -40,7 +65,8 @@ export default function Contact() {
             Let's Build Something
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-base">
-            Have a project in mind? Whether it's robotics, IoT, web, or game development — I'm always open to a good conversation.
+            Have a project in mind? Whether it's robotics, IoT, web, or game
+            development — I'm always open to a good conversation.
           </p>
         </div>
 
@@ -56,13 +82,19 @@ export default function Contact() {
                       <Icon className="w-5 h-5 text-violet-400" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">{info.label}</p>
-                      <p className="text-sm font-bold text-white">{info.value}</p>
+                      <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">
+                        {info.label}
+                      </p>
+                      <p className="text-sm font-bold text-white">
+                        {info.value}
+                      </p>
                     </div>
                   </div>
                 );
                 return info.href ? (
-                  <a key={info.label} href={info.href} className="block">{content}</a>
+                  <a key={info.label} href={info.href} className="block">
+                    {content}
+                  </a>
                 ) : (
                   <div key={info.label}>{content}</div>
                 );
@@ -91,7 +123,10 @@ export default function Contact() {
 
           {/* Form side */}
           <div className={visible ? "reveal-right visible" : "reveal-right"}>
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 sm:p-8 space-y-5">
+            <form
+              onSubmit={handleSubmit}
+              className="glass rounded-2xl p-6 sm:p-8 space-y-5"
+            >
               <div>
                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
                   Your Name
@@ -126,7 +161,9 @@ export default function Contact() {
                   required
                   rows={4}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-violet-500/50 focus:ring-2 focus:ring-violet-500/20 transition-all resize-none"
                   placeholder="Tell me about your project..."
                 />
